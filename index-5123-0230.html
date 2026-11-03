@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orçamentos de aço Gerdau | Atendimento com vendedor</title>
+  <meta name="description" content="A&ccedil;os longos, a&ccedil;os planos e solu&ccedil;&otilde;es Gerdau. Solicite seu or&ccedil;amento pelo WhatsApp.">
+  <meta property="og:image" content="assets/hero-gerdau.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/gerdau-logo.svg">
+  <style>
+    :root {
+      --blue: #00549f;
+      --blue-dark: #00345f;
+      --orange: #ffd200;
+      --orange-dark: #e2b900;
+      --steel: #f2f3f3;
+      --ink: #06121f;
+      --muted: #607083;
+      --line: #d9e1ea;
+      --green: #25d366;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: #fff; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+
+    .topbar { background: var(--blue-dark); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .05em; }
+    .topbar .container { display: flex; align-items: center; justify-content: space-between; min-height: 34px; gap: 16px; }
+    .langs { display: flex; gap: 10px; color: rgba(255,255,255,.75); }
+    .langs strong { color: #fff; }
+
+    header { position: sticky; top: 0; z-index: 40; color: #fff; background: var(--blue); box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 22px; }
+    .brand { display: flex; align-items: center; width: 178px; color: #fff; }
+    .brand-logo { width: 100%; height: auto; }
+    nav { display: flex; align-items: center; justify-content: center; gap: 28px; font-size: 13px; font-weight: 800; letter-spacing: .04em; }
+    nav a:hover, .social a:hover { color: #ffffff; }
+    .social { display: flex; align-items: center; gap: 12px; font-weight: 800; }
+    .icon-link { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; }
+
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 60; display: inline-flex; align-items: center; gap: 9px; padding: 14px 18px; border-radius: 999px; color: #fff; background: linear-gradient(135deg, #27c764, #159947); font-weight: 800; box-shadow: 0 15px 34px rgba(37,211,102,.35); transition: transform .2s ease; }
+    .whatsapp-float:hover { transform: translateY(-2px) scale(1.02); }
+
+    .hero { position: relative; height: min(48vw, 540px); min-height: 360px; overflow: hidden; background: var(--blue-dark); color: #fff; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; }
+    .slide.active { opacity: 1; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; }
+    .slide:after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(37,40,42,.82), rgba(37,40,42,.42) 46%, rgba(0,0,0,.05)); }
+    .hero-content { position: relative; z-index: 2; display: flex; align-items: center; height: 100%; }
+    .hero-copy { max-width: 660px; text-shadow: 0 4px 18px rgba(0,0,0,.35); }
+    .eyebrow { margin: 0 0 14px; color: #ffffff; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; font-size: 12px; }
+    h1 { margin: 0; font-size: clamp(38px, 6vw, 72px); line-height: .98; letter-spacing: -.04em; }
+    .hero-copy p { margin: 20px 0 0; max-width: 560px; font-size: clamp(17px, 2vw, 23px); line-height: 1.4; color: rgba(255,255,255,.94); }
+    .hero-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 14px 22px; border-radius: 999px; font-weight: 900; font-size: 14px; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-orange { color: var(--blue-dark); background: var(--orange); box-shadow: 0 12px 24px rgba(255,210,0,.28); }
+    .btn-orange:hover { background: var(--orange-dark); }
+    .btn-dark { color: #fff; background: var(--blue-dark); }
+    .btn-dark:hover { background: #17191b; }
+    .btn-outline { color: #fff; border: 1px solid rgba(255,255,255,.45); background: rgba(255,255,255,.09); backdrop-filter: blur(8px); }
+    .carousel-btn { position: absolute; top: 50%; z-index: 3; width: 44px; height: 44px; border: 0; border-radius: 999px; display: grid; place-items: center; color: #fff; background: rgba(255,255,255,.22); cursor: pointer; }
+    .prev { left: 18px; }
+    .next { right: 18px; }
+
+    section { padding: 72px 0; }
+    .cta { background: var(--steel); text-align: center; }
+    .section-title { margin: 0; font-size: clamp(27px, 4vw, 42px); line-height: 1.1; letter-spacing: -.03em; }
+    .section-copy { margin: 14px auto 0; max-width: 720px; color: var(--muted); font-size: 18px; line-height: 1.6; }
+    .cta-row { margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .trust-strip { padding: 26px 0; background: var(--blue-dark); color: #fff; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; overflow: hidden; border-radius: 8px; background: rgba(255,255,255,.16); }
+    .trust-item { min-height: 118px; padding: 22px; background: var(--blue); }
+    .trust-item strong { display: block; margin-bottom: 8px; color: #fff; font-size: 15px; }
+    .trust-item span { display: block; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.45; }
+    .quote-section { background: #fff; }
+    .quote-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; }
+    .quote-panel { position: sticky; top: 126px; padding: 28px; border-radius: 8px; color: #fff; background: var(--blue-dark); box-shadow: 0 18px 45px rgba(37,40,42,.18); }
+    .quote-panel .eyebrow { color: #ffffff; }
+    .quote-panel h2 { margin: 0; font-size: clamp(26px, 4vw, 38px); line-height: 1.08; letter-spacing: -.03em; }
+    .quote-panel p { margin: 14px 0 0; color: rgba(255,255,255,.8); line-height: 1.55; }
+    .steps-grid { display: grid; gap: 14px; }
+    .step-card { display: grid; grid-template-columns: 48px 1fr; gap: 16px; align-items: start; padding: 20px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 26px rgba(37,40,42,.07); }
+    .step-number { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--blue-dark); background: var(--orange); font-weight: 900; }
+    .step-card h3 { margin: 0 0 7px; font-size: 18px; }
+    .step-card p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .quote-checklist { margin-top: 22px; padding: 22px; border-radius: 8px; background: var(--steel); }
+    .quote-checklist h3 { margin: 0 0 14px; font-size: 20px; }
+    .check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .check-item { display: flex; align-items: center; gap: 8px; min-height: 38px; color: var(--blue-dark); font-weight: 800; font-size: 14px; }
+    .check-item:before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--orange); flex: 0 0 auto; }
+    .city-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 20, 52, .68); backdrop-filter: blur(6px); }
+    .city-modal.active { display: flex; }
+    .city-dialog { position: relative; width: min(100%, 460px); padding: 28px; border-radius: 8px; background: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.28); }
+    .city-close { position: absolute; top: 12px; right: 12px; width: 38px; height: 38px; border: 0; border-radius: 50%; color: var(--blue-dark); background: var(--steel); font-size: 24px; line-height: 1; cursor: pointer; }
+    .city-logo { width: 178px; height: auto; margin-bottom: 18px; }
+    .city-dialog h2 { margin: 0; color: var(--blue-dark); font-size: 26px; line-height: 1.1; letter-spacing: -.02em; }
+    .city-dialog p { margin: 12px 0 18px; color: var(--muted); line-height: 1.5; }
+    .city-form { display: grid; grid-template-columns: 1fr; gap: 10px; align-items: center; }
+    .city-combobox { position: relative; }
+    .city-form select, .city-form input { width: 100%; min-height: 48px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: #fff; outline: 0; font-size: 16px; }
+    .city-form select:focus, .city-form input:focus { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(255,210,0,.18); }
+    .city-options { position: absolute; z-index: 4; top: calc(100% + 6px); left: 0; right: 0; display: none; max-height: min(260px, 36vh); margin: 0; padding: 6px; overflow-y: auto; overscroll-behavior: contain; list-style: none; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 14px 36px rgba(37,40,42,.18); -webkit-overflow-scrolling: touch; }
+    .city-options.active { display: block; }
+    .city-option { width: 100%; min-height: 48px; padding: 10px 12px; border: 0; border-radius: 6px; color: var(--ink); background: transparent; font: inherit; font-size: 15px; line-height: 1.3; text-align: left; cursor: pointer; }
+    .city-option:hover, .city-option:focus, .city-option.active { color: #fff; background: var(--blue); outline: 0; }
+    .city-option-empty { padding: 12px; color: var(--muted); font-size: 14px; }
+    .city-form button { min-height: 48px; border: 0; border-radius: 8px; padding: 0 16px; color: var(--blue-dark); background: var(--orange); font-weight: 900; font-size: 16px; cursor: pointer; }
+    .city-error { display: none; margin-top: 10px; color: #b42318; font-size: 13px; font-weight: 800; }
+    .city-error.active { display: block; }
+    .city-redirect { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 8px; color: var(--blue-dark); background: var(--steel); font-size: 14px; font-weight: 900; line-height: 1.45; }
+    .city-redirect.active { display: block; }
+    body.modal-open { overflow: hidden; }
+    .notice-box { margin-top: 18px; padding: 16px 18px; border-left: 5px solid var(--orange); color: var(--muted); background: #fff; line-height: 1.55; }
+    .faq { background: var(--steel); }
+    .faq-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: start; }
+    .faq-list { display: grid; gap: 12px; }
+    details { border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgba(37,40,42,.05); }
+    summary { padding: 18px 20px; color: var(--blue-dark); font-weight: 900; cursor: pointer; }
+    details p { margin: 0; padding: 0 20px 18px; color: var(--muted); line-height: 1.55; }
+
+    .feature-band { position: relative; min-height: 420px; display: flex; align-items: center; overflow: hidden; color: #fff; background: var(--blue-dark); }
+    .feature-band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+    .feature-band:after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(37,40,42,.88), rgba(37,40,42,.46), rgba(0,0,0,.06)); }
+    .feature-band .container { position: relative; z-index: 2; }
+    .feature-band h2 { max-width: 760px; margin: 0; font-size: clamp(36px, 6vw, 70px); line-height: .98; letter-spacing: -.04em; }
+    .feature-band p { max-width: 620px; margin: 18px 0 0; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,.92); }
+
+    .quick-grid { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--blue-dark); }
+    .quick-item { position: relative; min-height: 172px; overflow: hidden; color: #fff; }
+    .quick-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .quick-item:hover img { transform: scale(1.08); }
+    .quick-item div { position: absolute; inset: 0; display: grid; place-items: center; padding: 20px; text-align: center; background: rgba(37,40,42,.68); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+
+    .products { background: #fff; }
+    .products-head { text-align: center; margin-bottom: 34px; }
+    .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .product-card { display: flex; flex-direction: column; overflow: hidden; min-height: 320px; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 10px 26px rgba(37,40,42,.08); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+    .product-card:hover { transform: translateY(-5px); border-color: var(--orange); box-shadow: 0 18px 34px rgba(37,40,42,.14); }
+    .product-image { height: 180px; display: grid; place-items: center; padding: 18px; background: #f8fafc; }
+    .product-image img { width: 100%; height: 100%; object-fit: contain; }
+    .product-body { flex: 1; display: flex; flex-direction: column; padding: 18px; }
+    .product-body h3 { margin: 0; font-size: 18px; line-height: 1.2; }
+    .product-body p { margin: 10px 0 18px; color: var(--muted); line-height: 1.5; font-size: 14px; }
+    .product-body .btn { margin-top: auto; width: 100%; min-height: 44px; padding: 12px 16px; }
+    .catalog-tools { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 14px; align-items: center; margin: 0 0 22px; }
+    .catalog-search { width: 100%; min-height: 50px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: #fff; box-shadow: 0 8px 24px rgba(37,40,42,.06); outline: 0; }
+    .catalog-search:focus { border-color: var(--orange); box-shadow: 0 0 0 4px rgba(255,210,0,.18); }
+    .catalog-count { color: var(--muted); font-size: 14px; font-weight: 800; white-space: nowrap; }
+    .catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+    .filter-chip { min-height: 38px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--blue-dark); background: #fff; font-weight: 900; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; transition: border-color .2s ease, background .2s ease, color .2s ease; }
+    .filter-chip:hover, .filter-chip.active { border-color: var(--orange); color: var(--blue-dark); background: var(--orange); }
+    .catalog-card { min-height: 255px; }
+    .catalog-card .product-image { height: 150px; padding: 0; overflow: hidden; background: linear-gradient(135deg, #f8fafc, #eef3f7); }
+    .catalog-card .product-image img { width: 100%; height: 100%; object-fit: cover; }
+    .catalog-icon { display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; color: #fff; background: var(--blue); font-weight: 900; font-size: 24px; box-shadow: inset 0 -10px 22px rgba(0,0,0,.12); }
+    .catalog-tag { display: inline-flex; width: fit-content; margin-bottom: 10px; padding: 5px 9px; border-radius: 999px; color: var(--orange-dark); background: #fff0e7; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em; }
+    .catalog-empty { display: none; padding: 28px; border: 1px dashed var(--line); border-radius: 8px; text-align: center; color: var(--muted); background: #f8fafc; }
+    .catalog-empty.active { display: block; }
+
+    .about { background: var(--steel); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; }
+    .about-list { display: grid; gap: 14px; margin-top: 24px; }
+    .about-list div { padding: 18px; border-left: 5px solid var(--orange); background: #fff; box-shadow: 0 10px 24px rgba(37,40,42,.06); }
+    .about-list strong { display: block; margin-bottom: 5px; }
+    .about-card img { width: 100%; border-radius: 8px; box-shadow: 0 18px 45px rgba(37,40,42,.18); }
+
+    footer { color: #fff; background: var(--blue-dark); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 34px; padding: 56px 0 40px; }
+    footer h4 { margin: 0 0 18px; font-size: 16px; }
+    footer p, footer a { color: rgba(255,255,255,.72); line-height: 1.7; font-size: 14px; }
+    footer a:hover { color: #fff; }
+    .footer-logo { width: 190px; height: auto; margin-bottom: 22px; }
+    .news { display: flex; gap: 12px; margin-bottom: 16px; }
+    .news img { width: 64px; height: 64px; border-radius: 6px; object-fit: cover; flex: 0 0 auto; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.12); padding: 22px 0; text-align: center; color: rgba(255,255,255,.55); font-size: 12px; }
+    svg { width: 20px; height: 20px; flex: 0 0 auto; }
+
+    @media (max-width: 920px) {
+      nav { display: none; }
+      .brand { width: 158px; }
+      .hero { min-height: 430px; }
+      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .catalog-tools { grid-template-columns: 1fr; }
+      .catalog-count { white-space: normal; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .quote-grid, .faq-grid { grid-template-columns: 1fr; }
+      .quote-panel { position: static; }
+      .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      body { overflow-x: hidden; }
+      .topbar .container { justify-content: center; text-align: center; }
+      .langs, .social { display: none; }
+      .nav { min-height: 78px; }
+      .brand { width: 150px; }
+      .hero { height: min(520px, 72svh); min-height: 420px; }
+      .city-modal { align-items: flex-end; padding: 10px; }
+      .city-dialog { max-height: calc(100dvh - 20px); overflow-y: auto; padding: 24px 18px calc(18px + env(safe-area-inset-bottom)); }
+      .city-dialog h2 { padding-right: 34px; font-size: 23px; }
+      .city-logo { width: 150px; }
+      .hero-actions .btn, .cta-row .btn { width: 100%; }
+      .carousel-btn { display: none; }
+      .product-grid { grid-template-columns: 1fr; }
+      .trust-grid, .check-grid { grid-template-columns: 1fr; }
+      .city-form { grid-template-columns: 1fr; }
+      .step-card { grid-template-columns: 1fr; }
+      .quick-grid { grid-template-columns: 1fr; }
+      .whatsapp-float span { display: none; }
+      .whatsapp-float { width: 58px; height: 58px; justify-content: center; padding: 0; }
+    }
+
+    a, button, input, summary { touch-action: manipulation; }
+      header .brand { padding: 8px 10px; border-radius: 6px; background: #fff; }
+    .seller-context { padding: 14px 0; background: #edf4fa; border-bottom: 1px solid #c9d9e8; color: #243d53; font-size: 14px; line-height: 1.5; }
+    .seller-context .container { display: flex; align-items: baseline; gap: 16px; }
+    .seller-context strong { flex-shrink: 0; color: var(--blue-dark); }
+    @media (max-width: 560px) { .seller-context .container { display: grid; gap: 4px; } .topbar .container { font-size: 10px; } }
+      .whatsapp-float { padding: 6px 18px 6px 6px; gap: 12px; }
+    .whatsapp-float .seller-avatar { position: relative; display: block; flex: 0 0 52px; width: 52px; height: 52px; }
+    .whatsapp-float .seller-photo { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; border-radius: 50%; border: 2px solid #fff; background: #e8edf1; }
+    .seller-photo img { position: absolute; width: 240%; max-width: none; height: auto; left: -123%; top: -24%; }
+    .whatsapp-float .seller-wa-badge { position: absolute; right: -2px; bottom: -2px; display: grid; place-items: center; width: 22px; height: 22px; border: 2px solid #fff; border-radius: 50%; background: #159947; color: #fff; }
+    .seller-wa-badge svg { width: 13px; height: 13px; }
+    .whatsapp-float .seller-cta { display: inline; }
+    @media (max-width: 560px) {
+      .whatsapp-float { width: 64px; height: 64px; padding: 4px; }
+      .whatsapp-float .seller-avatar { width: 56px; height: 56px; flex-basis: 56px; }
+      .whatsapp-float .seller-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>ORÇAMENTOS DE AÇO · ATENDIMENTO COM VENDEDOR</span>
+
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Gerdau">
+        <img class="brand-logo" src="assets/gerdau-logo.svg" alt="Gerdau">
+      </a>
+      <nav aria-label="Navega&ccedil;&atilde;o principal">
+        <a href="#empresa">ATENDIMENTO</a>
+        <a href="#produtos">PRODUTOS</a>
+        <a href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau.">COTA&Ccedil;&Atilde;O</a>
+        <a href="#contato">CONTATO</a>
+        <a href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">VENDAS</a>
+      </nav>
+
+    </div>
+  </header>
+  <div class="seller-context"><div class="container"><strong>Atendimento de vendas</strong><span>Clique em orçamento para conversar diretamente com o vendedor pelo WhatsApp. Disponibilidade e entrega são confirmadas no atendimento.</span></div></div>
+
+  <a class="whatsapp-float" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer" aria-label="Solicitar or&ccedil;amento pelo WhatsApp">
+    <span class="seller-avatar" aria-hidden="true"><span class="seller-photo"><img src="assets/vendedora.png" alt="" decoding="async"></span><span class="seller-wa-badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.5-8.4Zm-8.4 18.3a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 0 1-1.5-5.2c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8Zm5.4-7.4c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.1-.2.3-.8 1-.9 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2.1-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg></span></span>
+    <span class="seller-cta">Solicitar orçamento</span>
+  </a>
+
+  <main id="top">
+    <section class="hero" aria-label="Banners Gerdau">
+      <div class="slide active"><img src="assets/hero-gerdau.jpg" alt="A&ccedil;o inteligente Gerdau"></div>
+      <div class="slide"><img src="assets/usina-gerdau.jpg" alt="A&ccedil;o que faz o Brasil"></div>
+      <div class="slide"><img src="assets/industria-gerdau.jpeg" alt="Gerdau Brasil"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">a&ccedil;os longos, planos e solu&ccedil;&otilde;es</p>
+          <h1>A&ccedil;o inteligente para a sua obra e ind&uacute;stria</h1>
+          <p>Vergalh&otilde;es, telhas, perfis estruturais e solu&ccedil;&otilde;es em a&ccedil;o com a qualidade Gerdau.</p>
+          <div class="hero-actions">
+            <a class="btn btn-orange" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Orçamento pelo WhatsApp</a>
+            <a class="btn btn-outline" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Falar com o vendedor</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev" type="button" aria-label="Banner anterior">&#10094;</button>
+      <button class="carousel-btn next" type="button" aria-label="Pr&oacute;ximo banner">&#10095;</button>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="section-title">Precisa escolher o a&ccedil;o certo?</h2>
+        <p class="section-copy">Fale agora com o vendedor pelo WhatsApp e solicite seu or&ccedil;amento de produtos Gerdau.</p>
+        <div class="cta-row">
+          <a class="btn btn-orange" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Orçamento pelo WhatsApp</a>
+          <a class="btn btn-dark" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Falar com o vendedor</a>
+          <a class="btn btn-dark" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Chamar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Diferenciais da central online">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>Solicitação de cotação</strong><span>Atendimento direto pelo WhatsApp para agilizar consultas de produtos e disponibilidade.</span></div>
+        <div class="trust-item"><strong>Cat&aacute;logo organizado</strong><span>Produtos separados por categoria para facilitar a identifica&ccedil;&atilde;o do item certo.</span></div>
+        <div class="trust-item"><strong>Or&ccedil;amento personalizado</strong><span>Condi&ccedil;&otilde;es variam conforme produto, quantidade, regi&atilde;o e necessidade do pedido.</span></div>
+        <div class="trust-item"><strong>Retorno pelo WhatsApp</strong><span>Envie os dados da cota&ccedil;&atilde;o e receba orienta&ccedil;&atilde;o da equipe online.</span></div>
+      </div>
+    </section>
+
+    <section id="cotacao" class="quote-section">
+      <div class="container quote-grid">
+        <div class="quote-panel">
+          <p class="eyebrow">cota&ccedil;&atilde;o r&aacute;pida</p>
+          <h2>Como funciona o atendimento pelo WhatsApp</h2>
+          <p>Os botões abrem diretamente a conversa com o vendedor no WhatsApp. Não é necessário preencher um formulário.</p>
+          <div class="hero-actions">
+            <a class="btn btn-orange" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Iniciar cota&ccedil;&atilde;o</a>
+          </div>
+        </div>
+        <div>
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <div><h3>Escolha o produto</h3><p>Use o cat&aacute;logo para localizar o item desejado ou envie uma descri&ccedil;&atilde;o pelo WhatsApp.</p></div>
+            </article>
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <div><h3>Envie os dados da compra</h3><p>Informe quantidade, medidas, bitola e cidade de entrega para facilitar a consulta.</p></div>
+            </article>
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <div><h3>Converse com o vendedor</h3><p>A equipe online orienta sobre disponibilidade, condi&ccedil;&otilde;es comerciais e pr&oacute;ximos passos.</p></div>
+            </article>
+          </div>
+          <div class="quote-checklist">
+            <h3>Para cotar mais r&aacute;pido, envie:</h3>
+            <div class="check-grid">
+              <div class="check-item">Produto desejado</div>
+              <div class="check-item">Quantidade</div>
+              <div class="check-item">Cidade e UF</div>
+              <div class="check-item">Medida, bitola ou modelo</div>
+              <div class="check-item">Prazo desejado</div>
+              <div class="check-item">Tipo de aplica&ccedil;&atilde;o</div>
+            </div>
+          </div>
+          <div class="notice-box">As imagens e nomes dos produtos ajudam na identifica&ccedil;&atilde;o do cat&aacute;logo. Disponibilidade, condi&ccedil;&otilde;es e atendimento podem variar conforme regi&atilde;o, produto e volume solicitado.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band">
+      <img src="assets/usina-gerdau.jpg" alt="Aplicabilidade do a&ccedil;o no Brasil">
+      <div class="container">
+        <h2>O aço faz parte do Brasil</h2>
+        <p>Do transporte &agrave; mobilidade urbana, o a&ccedil;o est&aacute; presente em obras que conectam pessoas e moldam a infraestrutura do pa&iacute;s com seguran&ccedil;a, resist&ecirc;ncia e inova&ccedil;&atilde;o.</p>
+      </div>
+    </section>
+
+    <div class="quick-grid" aria-label="Destaques">
+      <a class="quick-item" href="#empresa"><img src="assets/hero-gerdau.jpg" alt=""><div>Inova&ccedil;&atilde;o</div></a>
+      <a class="quick-item" href="#produtos"><img src="assets/industria-gerdau.jpeg" alt=""><div>Constru&ccedil;&atilde;o Civil</div></a>
+      <a class="quick-item" href="#produtos"><img src="assets/usina-gerdau.jpg" alt=""><div>Estruturas</div></a>
+      <a class="quick-item" href="#empresa"><img src="assets/hero-gerdau.jpg" alt=""><div>Sustentabilidade</div></a>
+      <a class="quick-item" href="#contato"><img src="assets/industria-gerdau.jpeg" alt=""><div>Tecnologia</div></a>
+    </div>
+
+    <section id="produtos" class="products">
+      <div class="container">
+        <div class="products-head">
+          <h2 class="section-title">Catalogo de produtos</h2>
+          <p class="section-copy">Busque pelo nome ou pela aplicação. Confirme com o vendedor a marca, a especificação e a disponibilidade do produto.</p>
+        </div>
+        <div class="catalog-tools">
+          <input class="catalog-search" id="catalog-search" type="search" placeholder="Buscar produto, exemplo: vergalhao, perfil, telha..." aria-label="Buscar produto no catalogo">
+          <span class="catalog-count" id="catalog-count"></span>
+        </div>
+        <div class="catalog-filters" id="catalog-filters" aria-label="Filtros do catalogo"></div>
+        <div class="product-grid" id="catalog-grid"></div>
+        <div class="catalog-empty" id="catalog-empty">Nenhum produto encontrado para essa busca.</div>
+      </div>
+    </section>
+
+    <section id="empresa" class="about">
+      <div class="container">
+        <p class="eyebrow">Atendimento comercial</p>
+        <h2 class="section-title">Seu pedido começa com uma conversa</h2>
+        <p class="section-copy" style="margin-left:0">Consulte os produtos no catálogo e fale diretamente com o vendedor pelo WhatsApp. Preço, frete, disponibilidade e prazo de entrega são confirmados para cada pedido.</p>
+        <div class="about-list">
+          <div><strong>Sem cadastro</strong><span>Clique em orçamento para abrir o WhatsApp. Não é preciso preencher formulário ou selecionar cidade.</span></div>
+          <div><strong>Cotação personalizada</strong><span>Combine produtos, quantidades, medidas e cidade de entrega durante a conversa. Solicitar orçamento não conclui uma compra nem reserva estoque.</span></div>
+          <div><strong>Confira antes de comprar</strong><span>Solicite a proposta comercial e confirme os dados da empresa fornecedora antes de efetuar o pagamento.</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="dados-do-pedido" class="faq">
+      <div class="container">
+        <h2 class="section-title">Sobre o atendimento pelo WhatsApp</h2>
+        <p>Os botões abrem diretamente o WhatsApp do atendimento. Ao escolher um produto, o nome dele é incluído na mensagem. Confira a mensagem e o destinatário antes de enviá-la.</p>
+        <p>O WhatsApp e o provedor de hospedagem têm suas próprias práticas de tratamento de dados. Para esclarecer o uso da solicitação após o envio, fale com o responsável pelo atendimento no mesmo contato comercial.</p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow">d&uacute;vidas frequentes</p>
+          <h2 class="section-title">Perguntas antes de cotar</h2>
+          <p class="section-copy" style="margin-left:0">Respostas simples para quem quer consultar produtos pelo WhatsApp com mais seguran&ccedil;a.</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>A cota&ccedil;&atilde;o &eacute; gratuita?</summary>
+            <p>Sim. O contato pelo WhatsApp serve para consultar produtos, quantidades e condi&ccedil;&otilde;es comerciais.</p>
+          </details>
+          <details>
+            <summary>Posso cotar mais de um produto?</summary>
+            <p>Sim. Envie a lista de produtos com quantidades e medidas para a equipe online organizar o atendimento.</p>
+          </details>
+          <details>
+            <summary>Preciso informar minha cidade?</summary>
+            <p>Você pode ir direto ao WhatsApp sem informar a cidade. Os detalhes da entrega são combinados durante a conversa.</p>
+          </details>
+          <details>
+            <summary>O cat&aacute;logo garante disponibilidade imediata?</summary>
+            <p>N&atilde;o. O cat&aacute;logo facilita a identifica&ccedil;&atilde;o dos produtos, mas a disponibilidade deve ser confirmada pelo vendedor.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2 class="section-title">Solicite seu or&ccedil;amento agora mesmo!</h2>
+        <p class="section-copy">Consulte disponibilidade e condições de entrega com o vendedor pelo WhatsApp.</p>
+        <div class="cta-row">
+          <a class="btn btn-orange" href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Solicitar or&ccedil;amento</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/gerdau-logo.svg" alt="Gerdau">
+        <h4>CONTATO</h4>
+        <p>Atendimento comercial para or&ccedil;amentos de a&ccedil;o Gerdau.</p>
+        <p>Atendimento comercial com vendedor</p>
+        <p>WhatsApp: +55 11 5123-0230</p>
+        <p><a href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Clique aqui para falar no WhatsApp</a></p>
+      </div>
+      <div>
+        <h4>ATENDIMENTO</h4>
+        <p><a href="#empresa">Sobre o atendimento</a></p>
+        <p><a href="#produtos">Produtos e solu&ccedil;&otilde;es</a></p>
+        <p><a href="#dados-do-pedido">Sobre os dados do pedido</a></p>
+        <p><a href="https://wa.me/551151230230?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20a%C3%A7o%20Gerdau." rel="noopener noreferrer">Compre a&ccedil;o</a></p>
+      </div>
+      <div>
+        <h4>NOVIDADES</h4>
+        <div class="news">
+          <img src="assets/industria-gerdau.jpeg" alt="">
+          <p>Solu&ccedil;&otilde;es inovadoras para constru&ccedil;&atilde;o civil e estruturas em a&ccedil;o.</p>
+        </div>
+        <div class="news">
+          <img src="assets/hero-gerdau.jpg" alt="">
+          <p>Energia renov&aacute;vel e inova&ccedil;&atilde;o para uma produ&ccedil;&atilde;o de a&ccedil;o mais eficiente.</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">Orçamentos de aço · Atendimento comercial</div>
+  </footer>
+
+  <script>
+    const whatsappNumber = "551151230230";
+    function buildWhatsAppLink(productTitle = "") {
+      const message = "Olá, gostaria de solicitar um orçamento de aço Gerdau." + (productTitle ? " Produto: " + productTitle + "." : "");
+      return "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+    }
+    function updateWhatsAppLinks() {
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+        link.href = buildWhatsAppLink(link.dataset.product || "");
+      });
+    }
+
+    const catalogProducts = [
+      { title: "Aco 1045+", category: "Industria", desc: "Aco para usinagem com fornecimento em fio-maquina, barras laminadas, trefiladas e descascadas." },
+      { title: "Arame Farpado", category: "Agro", desc: "Arame galvanizado entrelacado com farpas para cercamentos rurais e controle de areas." },
+      { title: "Arame para Alambrado", category: "Serralheria", desc: "Arames de alta durabilidade para alambrados, fechamentos e protecao patrimonial." },
+      { title: "Arame Recozido", category: "Construcao Civil", desc: "Arame maleavel de baixo carbono para amarracoes, dobras e aplicacoes de obra." },
+      { title: "Armadura Pronta Soldada", category: "Construcao Civil", desc: "Elemento estrutural armado entregue pronto para uso conforme o projeto da obra." },
+      { title: "Barra Chata", category: "Industria", desc: "Perfil laminado retangular para fabricacao, reforcos, serralheria e estruturas metalicas." },
+      { title: "Barra Chata Mola", category: "Industria", desc: "Perfil para aplicacoes que precisam de resistencia mecanica e flexibilidade." },
+      { title: "Barra Chata Mola NewEco", category: "NewEco", desc: "Barra chata para molas com proposta de menor impacto ambiental." },
+      { title: "Barra Laminada Grossa", category: "Industria", desc: "Barra robusta para usos industriais que exigem confiabilidade e desempenho." },
+      { title: "Barra Laminada Redonda", category: "Industria", desc: "Perfil circular laminado a quente para fabricacao mecanica e componentes." },
+      { title: "Barra Redonda Descascada", category: "Industria", desc: "Barra redonda com melhor acabamento superficial para pecas de alta precisao." },
+      { title: "Barra Trefilada Hexagonal", category: "Industria", desc: "Perfil hexagonal trefilado a frio para fabricacao com maior precisao dimensional." },
+      { title: "Barra Trefilada Redonda", category: "Industria", desc: "Barra redonda trefilada para acabamento superior, tenacidade e medidas precisas." },
+      { title: "Barras de Transferencia", category: "Construcao Civil", desc: "Componentes para pisos e pavimentos de concreto, auxiliando a transferencia de cargas." },
+      { title: "Belgo Murfor", category: "Construcao Civil", desc: "Armadura de junta para reforco estrutural em alvenarias." },
+      { title: "Blindagem de vala", category: "Infraestrutura", desc: "Servico para escoramento seguro e eficiente em obras de valas e tubulacoes." },
+      { title: "Bobinas", category: "Industria", desc: "Bobinas com resistencia mecanica, soldabilidade e desempenho contra corrosao atmosferica." },
+      { title: "Cantoneira", category: "Estruturas", desc: "Perfil L laminado a quente para montagem, corte, solda e uso estrutural." },
+      { title: "Cantoneira de Alta Resistencia 60+", category: "Estruturas", desc: "Cantoneira de alta resistencia para torres, estruturas metalicas e aplicacoes exigentes." },
+      { title: "Cantoneira NewEco", category: "NewEco", desc: "Perfil L sustentavel para aplicacoes estruturais e metalicas." },
+      { title: "Cerca Pronta", category: "Agro", desc: "Solucao de cercamento para animais, lavouras e protecao de areas rurais." },
+      { title: "Chapas e blanks", category: "Industria", desc: "Produtos planos a partir de bobinas laminadas a quente, a frio, xadrez e zincadas." },
+      { title: "Coluna Pronta", category: "Construcao Civil", desc: "Colunas prontas para reduzir etapas no canteiro e melhorar produtividade da obra." },
+      { title: "CoProdutos", category: "Industria", desc: "Coprodutos siderurgicos com aplicacoes, catalogos e especificacoes tecnicas." },
+      { title: "Corte e Dobra", category: "Servicos", desc: "Servico de corte e dobra de vergalhoes conforme projeto estrutural." },
+      { title: "Dramix", category: "Construcao Civil", desc: "Fibras de aco para reforco de concreto em pisos industriais leves ou pesados." },
+      { title: "Espacadores Trelicados", category: "Construcao Civil", desc: "Espacadores em aco CA60 para posicionamento de armaduras na concretagem." },
+      { title: "Estaca prancha", category: "Infraestrutura", desc: "Solucoes estruturais para contencao, fundacao e suporte de cargas." },
+      { title: "Estribos", category: "Construcao Civil", desc: "Reforco pre-fabricado para estruturas de concreto, lajes, muros e pre-moldados." },
+      { title: "Fio Maquina", category: "Industria", desc: "Produto longo laminado e enrolado a quente para diversas transformacoes industriais." },
+      { title: "Forma Incorporada", category: "Construcao Civil", desc: "Sistema de formas permanentes em aco galvanizado para estruturas de concreto." },
+      { title: "Locacao de estaca prancha", category: "Servicos", desc: "Locacao com suporte tecnico para obras de contencao de solo." },
+      { title: "Perfil I", category: "Estruturas", desc: "Perfil estrutural em formato I para projetos com alta resistencia e eficiencia." },
+      { title: "Perfil U", category: "Estruturas", desc: "Viga U para estruturas metalicas, reforcos e aplicacoes industriais." },
+      { title: "Perfil U NewEco", category: "NewEco", desc: "Perfil U de alta resistencia com proposta sustentavel para estruturas." },
+      { title: "Perfil W", category: "Estruturas", desc: "Perfil estrutural para grandes cargas, galpoes, edificios e obras metalicas." },
+      { title: "Pregos", category: "Construcao Civil", desc: "Pregos para construcao civil, marcenaria, embalagens e aplicacoes industriais." },
+      { title: "Produtos NewEco", category: "NewEco", desc: "Linha ligada a produtos e processos de aco de baixo e zero carbono." },
+      { title: "Rolos - Slitter", category: "Industria", desc: "Rolos produzidos a partir de bobinas laminadas a frio, a quente ou zincadas." },
+      { title: "Sapatas", category: "Construcao Civil", desc: "Sapatas prontas em CA50 soldavel, fornecidas nas dimensoes exatas do projeto." },
+      { title: "Telas Soldadas Especiais", category: "Construcao Civil", desc: "Telas customizaveis para demandas especificas de diferentes tipos de obra." },
+      { title: "Telas Soldadas Nervuradas", category: "Construcao Civil", desc: "Tela soldada em aco CA60 nervurado para lajes, pisos e concreto armado." },
+      { title: "Telha de Aco Galvalume", category: "Coberturas", desc: "Telha de aco com alta durabilidade para coberturas comerciais, industriais e residenciais." },
+      { title: "Trelicas Nervuradas", category: "Construcao Civil", desc: "Trelicas em CA60 para posicionar armaduras, telas e barras na concretagem." },
+      { title: "Trelifacil", category: "Construcao Civil", desc: "Sistema para construcao de lajes com foco em produtividade e praticidade." },
+      { title: "Tubos metalicos", category: "Estruturas", desc: "Tubos de aco carbono com solda helicoidal para estruturas e conducoes." },
+      { title: "Vergalhao Gerdau 50 S", category: "Construcao Civil", desc: "Vergalhao CA50 para concreto armado, reconhecido por resistencia e durabilidade." },
+      { title: "Vergalhao Gerdau 50 S NewEco", category: "NewEco", desc: "Vergalhao CA50 com tecnologia NewEco para estruturas de concreto armado." },
+      { title: "Vergalhao Gerdau 60", category: "Construcao Civil", desc: "Vergalhao CA60 com alta resistencia e soldabilidade para lajes, vigas e fundacoes." },
+      { title: "Vergalhao Gerdau CA70 S", category: "Construcao Civil", desc: "Vergalhao de alta resistencia para aplicacoes estruturais exigentes." }
+    ];
+    const catalogImageBase = "assets/";
+    const catalogImages = {
+      "Aco 1045+": "imgi_14_aco-1045.png",
+      "Arame Farpado": "imgi_15_arame-farpado.webp",
+      "Arame para Alambrado": "imgi_16_arame-para-alambrado.webp",
+      "Arame Recozido": "imgi_17_arame-recozido.png",
+      "Armadura Pronta Soldada": "thumb_armadura-pronta-soldada.jpg",
+      "Barra Chata": "imgi_19_barra-chata.jpg",
+      "Barra Chata Mola": "imgi_20_barra-chata-mola.webp",
+      "Barra Chata Mola NewEco": "thumb_barra-chata-mola-neweco.jpg",
+      "Barra Laminada Grossa": "imgi_22_barra-laminada-grossa.webp",
+      "Barra Laminada Redonda": "imgi_23_barra-laminada-redonda.webp",
+      "Barra Redonda Descascada": "imgi_24_barra-redonda-descascada.png",
+      "Barra Trefilada Hexagonal": "imgi_25_barra-trefilada-hexagonal.webp",
+      "Barra Trefilada Redonda": "imgi_26_barra-trefilada-redonda.jpg",
+      "Barras de Transferencia": "imgi_27_barras-de-transferencia.jpg",
+      "Belgo Murfor": "imgi_28_belgo-murfor.png",
+      "Blindagem de vala": "thumb_blindagem-de-vala.jpg",
+      "Bobinas": "imgi_30_produtos-bobinas-thumb.webp",
+      "Cantoneira": "imgi_31_cantoneira.jpg",
+      "Cantoneira de Alta Resistencia 60+": "imgi_32_cantoneira-de-alta-resistencia-60.webp",
+      "Cantoneira NewEco": "imgi_33_cantoneira-neweco.webp",
+      "Cerca Pronta": "imgi_34_cerca-pronta.webp",
+      "Chapas e blanks": "imgi_35_chapas-e-blanks-17-abr-2026-14-11-16.webp",
+      "Coluna Pronta": "imgi_36_coluna-pronta.png",
+      "CoProdutos": "imgi_37_co-produtos-thumb.webp",
+      "Corte e Dobra": "imgi_38_corte-e-dobra.webp",
+      "Dramix": "imgi_39_dramix.jpg",
+      "Espacadores Trelicados": "imgi_40_espacadores-trelicados.webp",
+      "Estaca prancha": "imgi_41_estaca-prancha.webp",
+      "Estribos": "imgi_42_estribos.webp",
+      "Fio Maquina": "imgi_43_fio-maquina.jpg",
+      "Forma Incorporada": "imgi_44_forma-incorporada.jpg",
+      "Locacao de estaca prancha": "imgi_45_locacao-de-estaca-prancha.webp",
+      "Perfil I": "imgi_46_perfil-i.jpg",
+      "Perfil U": "imgi_47_perfil-u.jpg",
+      "Perfil U NewEco": "imgi_48_perfil-u-neweco.webp",
+      "Perfil W": "imgi_49_perfil-w.jpg",
+      "Pregos": "imgi_50_pregos.webp",
+      "Produtos NewEco": "imgi_51_produtos-neweco.jpg",
+      "Rolos - Slitter": "imgi_52_rolos-slitter.jpg",
+      "Sapatas": "imgi_53_sapatas.png",
+      "Telas Soldadas Especiais": "imgi_54_telas-soldadas-especiais.webp",
+      "Telas Soldadas Nervuradas": "imgi_55_telas-soldadas-nervuradas.webp",
+      "Telha de Aco Galvalume": "imgi_56_telha-de-aco-galvalume.webp",
+      "Trelicas Nervuradas": "imgi_57_trelicas-nervuradas.png",
+      "Trelifacil": "imgi_58_trelifacil-.webp",
+      "Tubos metalicos": "imgi_59_tubos-metalicos.webp",
+      "Vergalhao Gerdau 50 S": "imgi_60_vergalhao-gerdau-50-s.jpg",
+      "Vergalhao Gerdau 50 S NewEco": "thumb_vergalhao-gerdau-50-s-neweco.jpg",
+      "Vergalhao Gerdau 60": "imgi_62_vergalhao-gerdau-60.webp",
+      "Vergalhao Gerdau CA70 S": "imgi_63_vergalhao-gerdau-ca70-s.webp"
+    };
+
+    const catalogGrid = document.getElementById("catalog-grid");
+    const catalogSearch = document.getElementById("catalog-search");
+    const catalogFilters = document.getElementById("catalog-filters");
+    const catalogCount = document.getElementById("catalog-count");
+    const catalogEmpty = document.getElementById("catalog-empty");
+    let activeCategory = "Todos";
+
+    function normalizeText(value) {
+      return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function createWhatsAppLink(productTitle) {
+      return buildWhatsAppLink(productTitle);
+    }
+
+    function renderFilters() {
+      const categories = ["Todos", ...Array.from(new Set(catalogProducts.map((product) => product.category))).sort()];
+      catalogFilters.innerHTML = categories.map((category) => (
+        `<button class="filter-chip${category === activeCategory ? " active" : ""}" type="button" data-category="${category}">${category}</button>`
+      )).join("");
+    }
+
+    function renderCatalog() {
+      const query = normalizeText(catalogSearch.value.trim());
+      const filteredProducts = catalogProducts.filter((product) => {
+        const matchesCategory = activeCategory === "Todos" || product.category === activeCategory;
+        const matchesSearch = !query || normalizeText(`${product.title} ${product.category} ${product.desc}`).includes(query);
+        return matchesCategory && matchesSearch;
+      });
+
+      catalogGrid.innerHTML = filteredProducts.map((product) => {
+        const initials = product.title.split(" ").slice(0, 2).map((word) => word[0]).join("").toUpperCase();
+        const imageFile = product.category === "Construcao Civil" ? "industria-gerdau.jpeg" : product.category === "Industria" ? "hero-gerdau.jpg" : "usina-gerdau.jpg";
+        const imageMarkup = imageFile
+          ? `<img src="${catalogImageBase}${imageFile}" alt="${product.title}">`
+          : `<div class="catalog-icon" aria-hidden="true">${initials}</div>`;
+        return `
+          <article class="product-card catalog-card">
+            <div class="product-image">${imageMarkup}</div>
+            <div class="product-body">
+              <span class="catalog-tag">${product.category}</span>
+              <h3>${product.title}</h3>
+              <p>${product.desc}</p>
+              <a class="btn btn-orange" href="${createWhatsAppLink(product.title)}" rel="noopener noreferrer" data-product="${product.title}">Clique para orcar</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      catalogCount.textContent = `${filteredProducts.length} de ${catalogProducts.length} produtos`;
+      catalogEmpty.classList.toggle("active", filteredProducts.length === 0);
+      updateWhatsAppLinks();
+    }
+
+    renderFilters();
+    renderCatalog();
+
+    updateWhatsAppLinks();
+
+
+    catalogSearch.addEventListener("input", renderCatalog);
+    catalogFilters.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-category]");
+      if (!button) return;
+      activeCategory = button.dataset.category;
+      renderFilters();
+      renderCatalog();
+    });
+
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, itemIndex) => {
+        slide.classList.toggle("active", itemIndex === currentSlide);
+      });
+    }
+
+    document.querySelector(".prev").addEventListener("click", () => showSlide(currentSlide - 1));
+    document.querySelector(".next").addEventListener("click", () => showSlide(currentSlide + 1));
+    window.setInterval(() => showSlide(currentSlide + 1), 5200);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
